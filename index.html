@@ -15,8 +15,8 @@
     <div class="brand">
       <span class="brand-icon">🛒</span>
       <div class="brand-text">
-        <h1>Maa Annapurna Mart</h1>
-        <p class="tagline">Fresh Groceries, Delivered with Love</p>
+        <h1 id="storeName">Maa Annapurna Mart</h1>
+        <p class="tagline" id="storeTagline">Fresh Groceries, Delivered with Love</p>
       </div>
     </div>
     <button class="cart-btn" id="cartBtn" aria-label="Open cart">
@@ -41,9 +41,10 @@
 </main>
 
 <footer class="site-footer">
-  <p><strong>Maa Annapurna Mart</strong></p>
-  <p>Contact: Person DHN · +91 98765 43210</p>
+  <p><strong id="footerStoreName">Maa Annapurna Mart</strong></p>
+  <p>Contact: <span id="footerOwnerName">Person DHN</span> · <span id="footerPhone">+91 98765 43210</span></p>
   <p class="footer-note">Order online, pay on delivery. No card or online payment needed.</p>
+  <p class="footer-links"><a href="image-credits.html">Image credits</a> · <a href="admin.html">Admin</a></p>
 </footer>
 
 <!-- Floating checkout bar -->
@@ -97,7 +98,6 @@
 
 <div class="toast hidden" id="toast"></div>
 
-<script src="products.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

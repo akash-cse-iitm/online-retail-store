@@ -1,0 +1,386 @@
+{
+  "profile": {
+    "storeName": "Maa Annapurna Mart",
+    "tagline": "Fresh Groceries, Delivered with Love",
+    "ownerName": "Person DHN",
+    "phone": "+91 98765 43210",
+    "whatsappNumber": "919876543210"
+  },
+  "categories": [
+    {
+      "id": "grocery",
+      "label": "Grocery",
+      "icon": "🌾"
+    },
+    {
+      "id": "vegetables",
+      "label": "Vegetables",
+      "icon": "🥦"
+    },
+    {
+      "id": "fruits",
+      "label": "Fruits",
+      "icon": "🍎"
+    },
+    {
+      "id": "dairy",
+      "label": "Dairy & Bakery",
+      "icon": "🥛"
+    },
+    {
+      "id": "snacks",
+      "label": "Snacks",
+      "icon": "🍪"
+    },
+    {
+      "id": "beverages",
+      "label": "Beverages",
+      "icon": "🧃"
+    },
+    {
+      "id": "personal-care",
+      "label": "Personal Care",
+      "icon": "🧴"
+    },
+    {
+      "id": "household",
+      "label": "Household",
+      "icon": "🧹"
+    }
+  ],
+  "products": [
+    {
+      "id": "g1",
+      "category": "grocery",
+      "name": "Tata Atta",
+      "unit": "5 kg",
+      "price": 235,
+      "icon": "🌾",
+      "image": "https://live.staticflickr.com/2348/2070397498_449280bfd2_b.jpg"
+    },
+    {
+      "id": "g2",
+      "category": "grocery",
+      "name": "India Gate Basmati Rice",
+      "unit": "5 kg",
+      "price": 420,
+      "icon": "🍚",
+      "image": "https://live.staticflickr.com/6182/6121427720_bde3e8dc66_b.jpg"
+    },
+    {
+      "id": "g3",
+      "category": "grocery",
+      "name": "Toor Dal",
+      "unit": "1 kg",
+      "price": 165,
+      "icon": "🫘",
+      "image": "https://live.staticflickr.com/1179/559482494_ac1ac1eba4_b.jpg"
+    },
+    {
+      "id": "g4",
+      "category": "grocery",
+      "name": "Moong Dal",
+      "unit": "1 kg",
+      "price": 130,
+      "icon": "🫘",
+      "image": "https://live.staticflickr.com/4104/5194456370_b4a0ebd010_b.jpg"
+    },
+    {
+      "id": "g5",
+      "category": "grocery",
+      "name": "Fortune Sunflower Oil",
+      "unit": "1 L",
+      "price": 145,
+      "icon": "🛢️",
+      "image": "https://live.staticflickr.com/22/34581074_d3bede7610_b.jpg"
+    },
+    {
+      "id": "g6",
+      "category": "grocery",
+      "name": "Tata Salt",
+      "unit": "1 kg",
+      "price": 28,
+      "icon": "🧂",
+      "image": "https://live.staticflickr.com/105/252462355_a76511a2c3_b.jpg"
+    },
+    {
+      "id": "g7",
+      "category": "grocery",
+      "name": "Sugar",
+      "unit": "1 kg",
+      "price": 46,
+      "icon": "🍬",
+      "image": "https://live.staticflickr.com/2535/3909490383_3d053a6e98_b.jpg"
+    },
+    {
+      "id": "g8",
+      "category": "grocery",
+      "name": "Besan",
+      "unit": "500 g",
+      "price": 58,
+      "icon": "🌾",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Soan_sohan_papdi_India_Festive_Sweets.jpg"
+    },
+    {
+      "id": "v1",
+      "category": "vegetables",
+      "name": "Onion",
+      "unit": "1 kg",
+      "price": 35,
+      "icon": "🧅",
+      "image": "https://live.staticflickr.com/8177/28151557204_e12a29b25d_b.jpg"
+    },
+    {
+      "id": "v2",
+      "category": "vegetables",
+      "name": "Potato",
+      "unit": "1 kg",
+      "price": 28,
+      "icon": "🥔",
+      "image": "https://live.staticflickr.com/4142/4737211356_f19be62ae0_b.jpg"
+    },
+    {
+      "id": "v3",
+      "category": "vegetables",
+      "name": "Tomato",
+      "unit": "1 kg",
+      "price": 40,
+      "icon": "🍅",
+      "image": "https://live.staticflickr.com/4522/38726625962_3d12c17912_b.jpg"
+    },
+    {
+      "id": "v4",
+      "category": "vegetables",
+      "name": "Green Capsicum",
+      "unit": "500 g",
+      "price": 35,
+      "icon": "🫑",
+      "image": "https://live.staticflickr.com/4114/4783962793_3faa4051c3_b.jpg"
+    },
+    {
+      "id": "v5",
+      "category": "vegetables",
+      "name": "Cauliflower",
+      "unit": "1 pc",
+      "price": 30,
+      "icon": "🥦",
+      "image": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL2ZsNTE2Njg0OTA3MTktaW1hZ2UuanBn.jpg"
+    },
+    {
+      "id": "v6",
+      "category": "vegetables",
+      "name": "Spinach (Palak)",
+      "unit": "1 bunch",
+      "price": 20,
+      "icon": "🥬",
+      "image": "https://live.staticflickr.com/2499/3946929356_a71a71b6fb.jpg"
+    },
+    {
+      "id": "f1",
+      "category": "fruits",
+      "name": "Banana",
+      "unit": "1 dozen",
+      "price": 55,
+      "icon": "🍌",
+      "image": "https://live.staticflickr.com/135/350002649_ee520b3303.jpg"
+    },
+    {
+      "id": "f2",
+      "category": "fruits",
+      "name": "Apple (Shimla)",
+      "unit": "1 kg",
+      "price": 180,
+      "icon": "🍎",
+      "image": "https://live.staticflickr.com/65535/49228762432_cb183cd394_b.jpg"
+    },
+    {
+      "id": "f3",
+      "category": "fruits",
+      "name": "Papaya",
+      "unit": "1 pc",
+      "price": 40,
+      "icon": "🥭",
+      "image": "https://live.staticflickr.com/3119/3355136642_51f8dc3eb5_b.jpg"
+    },
+    {
+      "id": "f4",
+      "category": "fruits",
+      "name": "Orange",
+      "unit": "1 kg",
+      "price": 90,
+      "icon": "🍊",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/37/Orange_fruit_%28Citrus_%C3%97_sinensis%29.jpg"
+    },
+    {
+      "id": "d1",
+      "category": "dairy",
+      "name": "Amul Milk",
+      "unit": "500 ml",
+      "price": 30,
+      "icon": "🥛",
+      "image": "https://live.staticflickr.com/1123/603813014_41a2f1c968_b.jpg"
+    },
+    {
+      "id": "d2",
+      "category": "dairy",
+      "name": "Amul Butter",
+      "unit": "100 g",
+      "price": 58,
+      "icon": "🧈",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Croissant_2%2C_Butter_Block%2C_Buffalo%2C_New_York%2C_USA_%2853776803927%29.jpg"
+    },
+    {
+      "id": "d3",
+      "category": "dairy",
+      "name": "Paneer",
+      "unit": "200 g",
+      "price": 90,
+      "icon": "🧀",
+      "image": "https://live.staticflickr.com/6173/6181952938_582ae5eb02_b.jpg"
+    },
+    {
+      "id": "d4",
+      "category": "dairy",
+      "name": "Bread",
+      "unit": "1 pack",
+      "price": 40,
+      "icon": "🍞",
+      "image": "https://live.staticflickr.com/8548/8755073633_b85eda68b5_b.jpg"
+    },
+    {
+      "id": "d5",
+      "category": "dairy",
+      "name": "Curd",
+      "unit": "400 g",
+      "price": 35,
+      "icon": "🥣",
+      "image": "https://live.staticflickr.com/188/408796126_39e0761eae_b.jpg"
+    },
+    {
+      "id": "s1",
+      "category": "snacks",
+      "name": "Lay's Chips",
+      "unit": "52 g",
+      "price": 20,
+      "icon": "🍟",
+      "image": "https://live.staticflickr.com/4024/4288174278_430883123a_b.jpg"
+    },
+    {
+      "id": "s2",
+      "category": "snacks",
+      "name": "Parle-G Biscuit",
+      "unit": "250 g",
+      "price": 30,
+      "icon": "🍪",
+      "image": "https://live.staticflickr.com/2564/3757167177_d9df057a9e_b.jpg"
+    },
+    {
+      "id": "s3",
+      "category": "snacks",
+      "name": "Haldiram Namkeen",
+      "unit": "200 g",
+      "price": 65,
+      "icon": "🥨",
+      "image": "https://live.staticflickr.com/4845/32658027538_3f18014a9e.jpg"
+    },
+    {
+      "id": "s4",
+      "category": "snacks",
+      "name": "Maggi Noodles",
+      "unit": "4 pack",
+      "price": 56,
+      "icon": "🍜",
+      "image": "https://live.staticflickr.com/3002/2416809777_a6464726aa_b.jpg"
+    },
+    {
+      "id": "b1",
+      "category": "beverages",
+      "name": "Coca-Cola",
+      "unit": "750 ml",
+      "price": 40,
+      "icon": "🥤",
+      "image": "https://live.staticflickr.com/8893/18533898981_bc466e53dc_b.jpg"
+    },
+    {
+      "id": "b2",
+      "category": "beverages",
+      "name": "Real Fruit Juice",
+      "unit": "1 L",
+      "price": 110,
+      "icon": "🧃",
+      "image": "https://live.staticflickr.com/4147/5084101811_9f84644414_b.jpg"
+    },
+    {
+      "id": "b3",
+      "category": "beverages",
+      "name": "Tea Powder",
+      "unit": "250 g",
+      "price": 130,
+      "icon": "🍵",
+      "image": "https://live.staticflickr.com/3702/9235413327_46a4b098c7_b.jpg"
+    },
+    {
+      "id": "b4",
+      "category": "beverages",
+      "name": "Nescafe Coffee",
+      "unit": "50 g",
+      "price": 145,
+      "icon": "☕",
+      "image": "https://live.staticflickr.com/3543/4605291784_bb3452c60a_b.jpg"
+    },
+    {
+      "id": "p1",
+      "category": "personal-care",
+      "name": "Colgate Toothpaste",
+      "unit": "150 g",
+      "price": 95,
+      "icon": "🪥",
+      "image": "https://live.staticflickr.com/2371/2522040782_776aeb5e0a_b.jpg"
+    },
+    {
+      "id": "p2",
+      "category": "personal-care",
+      "name": "Dove Soap",
+      "unit": "1 pc",
+      "price": 55,
+      "icon": "🧼",
+      "image": "https://live.staticflickr.com/1385/768696198_3fd867635f_b.jpg"
+    },
+    {
+      "id": "p3",
+      "category": "personal-care",
+      "name": "Head & Shoulders Shampoo",
+      "unit": "180 ml",
+      "price": 175,
+      "icon": "🧴",
+      "image": "https://live.staticflickr.com/2613/3691086498_0a94578156_b.jpg"
+    },
+    {
+      "id": "h1",
+      "category": "household",
+      "name": "Vim Dishwash Bar",
+      "unit": "1 pc",
+      "price": 20,
+      "icon": "🧽",
+      "image": "https://live.staticflickr.com/4892/46386499361_ab92f0607e_b.jpg"
+    },
+    {
+      "id": "h2",
+      "category": "household",
+      "name": "Surf Excel Detergent",
+      "unit": "1 kg",
+      "price": 130,
+      "icon": "🧺",
+      "image": "https://live.staticflickr.com/3852/15008250459_ff647cd662_b.jpg"
+    },
+    {
+      "id": "h3",
+      "category": "household",
+      "name": "Harpic Toilet Cleaner",
+      "unit": "500 ml",
+      "price": 95,
+      "icon": "🧹",
+      "image": "https://live.staticflickr.com/4194/34517609932_d59ff155c8_b.jpg"
+    }
+  ]
+}

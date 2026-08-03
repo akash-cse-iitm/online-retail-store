@@ -1,0 +1,140 @@
+.admin-body { padding-bottom: 60px; }
+
+.admin-back-link { color: #fff; font-size: 13px; text-decoration: none; opacity: 0.9; }
+.admin-back-link:hover { text-decoration: underline; }
+
+.admin-main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 24px 18px 80px;
+}
+
+.admin-panel {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+}
+.admin-panel h2 { margin: 0 0 6px; font-size: 17px; color: var(--primary-dark); }
+.admin-hint { font-size: 12.5px; color: var(--muted); line-height: 1.6; margin: 0 0 16px; }
+.admin-hint a { color: var(--primary-dark); }
+.admin-hint code { background: var(--bg); padding: 1px 5px; border-radius: 4px; }
+
+.admin-panel form { display: flex; flex-direction: column; gap: 12px; }
+.admin-panel label { display: flex; flex-direction: column; gap: 5px; font-size: 12.5px; font-weight: 700; color: var(--muted); }
+.admin-panel input[type="text"],
+.admin-panel input[type="password"],
+.admin-panel input[type="tel"] {
+  font-family: inherit;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  font-size: 14px;
+  color: var(--text);
+  outline: none;
+}
+.admin-panel input:focus { border-color: var(--primary); }
+
+.admin-checkbox { flex-direction: row !important; align-items: center; gap: 8px !important; }
+.admin-checkbox input { width: auto; }
+
+.admin-btn {
+  border: none;
+  border-radius: 8px;
+  padding: 11px 18px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+.admin-btn.primary { background: var(--primary); color: #fff; }
+.admin-btn.primary:hover { background: var(--primary-dark); }
+.admin-btn.ghost { background: transparent; color: var(--accent-dark); border: 1px solid var(--accent); }
+.admin-btn.ghost:hover { background: rgba(224, 112, 58, 0.08); }
+.admin-btn.small { padding: 7px 12px; font-size: 12.5px; }
+
+.admin-error { color: #c0392b; font-size: 12.5px; margin: 4px 0 0; }
+
+.editor-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 26px 0 12px;
+}
+.editor-topbar:first-child { margin-top: 0; }
+.editor-topbar h2 { font-size: 16px; margin: 0; color: var(--primary-dark); }
+
+.profile-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+.profile-form label:nth-child(2) { grid-column: span 2; }
+
+.products-editor { display: flex; flex-direction: column; gap: 10px; }
+
+.product-row {
+  display: grid;
+  grid-template-columns: 56px 1.4fr 0.7fr 0.8fr 1fr 1.2fr auto;
+  gap: 8px;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+}
+.product-row img,
+.product-row .row-fallback-icon {
+  width: 44px;
+  height: 44px;
+  object-fit: cover;
+  border-radius: 6px;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+.product-row input,
+.product-row select {
+  font-family: inherit;
+  padding: 8px 9px;
+  border-radius: 7px;
+  border: 1px solid var(--border);
+  font-size: 12.5px;
+  color: var(--text);
+  outline: none;
+  width: 100%;
+}
+.product-row input:focus,
+.product-row select:focus { border-color: var(--primary); }
+.product-row .row-remove {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+}
+.product-row .row-remove:hover { color: #c0392b; }
+
+.save-bar {
+  position: sticky;
+  bottom: 0;
+  margin-top: 22px;
+  background: var(--bg);
+  padding: 14px 0 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  border-top: 1px dashed var(--border);
+}
+.save-status { font-size: 12.5px; color: var(--muted); }
+.save-status.success { color: var(--primary-dark); font-weight: 700; }
+.save-status.error { color: #c0392b; font-weight: 700; }
+
+@media (max-width: 700px) {
+  .product-row { grid-template-columns: 1fr 1fr; }
+  .profile-form { grid-template-columns: 1fr; }
+  .profile-form label:nth-child(2) { grid-column: span 1; }
+}

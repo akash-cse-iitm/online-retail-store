@@ -1,9 +1,5 @@
-// ---------- Config ----------
-// Replace with the mart's real WhatsApp number (with country code, no spaces/plus).
-const STORE_WHATSAPP_NUMBER = "919876543210";
-const STORE_OWNER_NAME = "Person DHN";
-
 // ---------- State ----------
+let STORE = null; // { profile, categories, products } loaded from data.json
 let cart = JSON.parse(localStorage.getItem("annapurna_cart") || "{}"); // { productId: qty }
 let activeCategory = "all";
 let searchQuery = "";
@@ -19,7 +15,7 @@ function saveCart() {
 }
 
 function getProduct(id) {
-  return PRODUCTS.find((p) => p.id === id);
+  return STORE.products.find((p) => p.id === id);
 }
 
 function cartCountTotal() {
@@ -45,9 +41,20 @@ function showToast(msg) {
   showToast._t = setTimeout(() => toast.classList.add("hidden"), 1500);
 }
 
+// ---------- Profile ----------
+function renderProfile() {
+  const { storeName, tagline, ownerName, phone } = STORE.profile;
+  document.title = `${storeName} — Order Groceries Online`;
+  document.getElementById("storeName").textContent = storeName;
+  document.getElementById("storeTagline").textContent = tagline;
+  document.getElementById("footerStoreName").textContent = storeName;
+  document.getElementById("footerOwnerName").textContent = ownerName;
+  document.getElementById("footerPhone").textContent = phone;
+}
+
 // ---------- Tabs ----------
 function renderTabs() {
-  CATEGORIES.forEach((cat) => {
+  STORE.categories.forEach((cat) => {
     const btn = document.createElement("button");
     btn.className = "tab";
     btn.dataset.category = cat.id;
@@ -70,7 +77,7 @@ function renderProducts() {
   productGrid.innerHTML = "";
 
   const q = searchQuery.trim().toLowerCase();
-  let list = PRODUCTS.filter((p) => {
+  let list = STORE.products.filter((p) => {
     const matchesCategory = activeCategory === "all" || p.category === activeCategory;
     const matchesSearch = !q || p.name.toLowerCase().includes(q);
     return matchesCategory && matchesSearch;
@@ -80,8 +87,8 @@ function renderProducts() {
 
   if (activeCategory === "all" && !q) {
     // group by category with headings
-    CATEGORIES.forEach((cat) => {
-      const items = PRODUCTS.filter((p) => p.category === cat.id);
+    STORE.categories.forEach((cat) => {
+      const items = STORE.products.filter((p) => p.category === cat.id);
       if (!items.length) return;
       const heading = document.createElement("div");
       heading.className = "category-heading";
@@ -102,7 +109,9 @@ function renderCard(product) {
   const qty = cart[product.id] || 0;
 
   card.innerHTML = `
-    <div class="product-icon">${product.icon}</div>
+    <div class="product-image">
+      ${product.image ? `<img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'product-icon-fallback',textContent:'${product.icon}'}))" />` : `<div class="product-icon-fallback">${product.icon}</div>`}
+    </div>
     <p class="product-name">${product.name}</p>
     <p class="product-unit">${product.unit}</p>
     <p class="product-price">${formatPrice(product.price)}</p>
@@ -195,7 +204,9 @@ function renderCartItems() {
     const row = document.createElement("div");
     row.className = "cart-item";
     row.innerHTML = `
-      <div class="cart-item-icon">${p.icon}</div>
+      <div class="cart-item-image">
+        ${p.image ? `<img src="${p.image}" alt="${p.name}" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'cart-item-icon',textContent:'${p.icon}'}))" />` : `<div class="cart-item-icon">${p.icon}</div>`}
+      </div>
       <div class="cart-item-info">
         <p class="cart-item-name">${p.name}</p>
         <p class="cart-item-unit">${p.unit} · ${formatPrice(p.price)}</p>
@@ -258,7 +269,7 @@ document.getElementById("orderForm").addEventListener("submit", (e) => {
   }
 
   const lines = [];
-  lines.push(`🛒 *New Order — Maa Annapurna Mart*`);
+  lines.push(`🛒 *New Order — ${STORE.profile.storeName}*`);
   lines.push("");
   Object.entries(cart).forEach(([id, qty]) => {
     const p = getProduct(id);
@@ -274,11 +285,18 @@ document.getElementById("orderForm").addEventListener("submit", (e) => {
   lines.push(`Address: ${address}`);
 
   const message = encodeURIComponent(lines.join("\n"));
-  const url = `https://wa.me/${STORE_WHATSAPP_NUMBER}?text=${message}`;
+  const url = `https://wa.me/${STORE.profile.whatsappNumber}?text=${message}`;
   window.open(url, "_blank");
 });
 
 // ---------- Init ----------
-renderTabs();
-renderProducts();
-updateCartUI();
+async function init() {
+  const res = await fetch("data.json", { cache: "no-store" });
+  STORE = await res.json();
+  renderProfile();
+  renderTabs();
+  renderProducts();
+  updateCartUI();
+}
+
+init();

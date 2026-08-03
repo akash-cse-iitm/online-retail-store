@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin — Maa Annapurna Mart</title>
+<link rel="stylesheet" href="style.css" />
+<link rel="stylesheet" href="admin.css" />
+</head>
+<body class="admin-body">
+
+<header class="site-header" style="position:static;">
+  <div class="header-inner">
+    <div class="brand">
+      <span class="brand-icon">🛠️</span>
+      <div class="brand-text">
+        <h1>Store Admin</h1>
+        <p class="tagline">Edit products, prices, images &amp; profile</p>
+      </div>
+    </div>
+    <a href="index.html" class="admin-back-link">← Back to store</a>
+  </div>
+</header>
+
+<main class="admin-main">
+
+  <!-- Step 1: password gate -->
+  <section id="loginPanel" class="admin-panel">
+    <h2>Admin Login</h2>
+    <p class="admin-hint">This only gates this screen in your browser. Actual changes require a GitHub token in the next step, so treat that token as the real credential.</p>
+    <form id="loginForm">
+      <label>
+        Password
+        <input type="password" id="loginPassword" required autocomplete="current-password" />
+      </label>
+      <button type="submit" class="admin-btn primary">Unlock</button>
+      <p id="loginError" class="admin-error hidden">Incorrect password.</p>
+    </form>
+  </section>
+
+  <!-- Step 2: GitHub connection -->
+  <section id="connectPanel" class="admin-panel hidden">
+    <h2>Connect to GitHub</h2>
+    <p class="admin-hint">
+      Changes you save here are committed directly to <code>data.json</code> in your GitHub repo, so they go live for every visitor after GitHub Pages rebuilds (usually under a minute).
+      Create a token at <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">github.com/settings/tokens</a> (fine-grained, scoped to just this repo, with <strong>Contents: Read and write</strong> permission). The token is stored only in this browser's local storage — never committed to the repo.
+    </p>
+    <form id="connectForm">
+      <label>
+        Repo owner (your GitHub username)
+        <input type="text" id="ghOwner" placeholder="e.g. akash123" required />
+      </label>
+      <label>
+        Repo name
+        <input type="text" id="ghRepo" placeholder="e.g. maa-annapurna-mart" required />
+      </label>
+      <label>
+        Branch
+        <input type="text" id="ghBranch" value="main" required />
+      </label>
+      <label>
+        Personal Access Token
+        <input type="password" id="ghToken" placeholder="github_pat_..." required autocomplete="off" />
+      </label>
+      <label class="admin-checkbox">
+        <input type="checkbox" id="ghRemember" checked />
+        Remember these details in this browser
+      </label>
+      <button type="submit" class="admin-btn primary">Load Store Data</button>
+      <p id="connectError" class="admin-error hidden"></p>
+    </form>
+  </section>
+
+  <!-- Step 3: editor -->
+  <section id="editorPanel" class="admin-panel hidden">
+    <div class="editor-topbar">
+      <h2>Store Profile</h2>
+      <button id="disconnectBtn" class="admin-btn ghost small">Disconnect</button>
+    </div>
+
+    <form id="profileForm" class="profile-form">
+      <label>
+        Store Name
+        <input type="text" id="fStoreName" required />
+      </label>
+      <label>
+        Tagline
+        <input type="text" id="fTagline" required />
+      </label>
+      <label>
+        Owner / Contact Person Name
+        <input type="text" id="fOwnerName" required />
+      </label>
+      <label>
+        Display Phone Number (shown in footer)
+        <input type="text" id="fPhone" placeholder="+91 98765 43210" required />
+      </label>
+      <label>
+        WhatsApp Number (digits only, with country code — used for orders)
+        <input type="text" id="fWhatsapp" placeholder="919876543210" pattern="[0-9]{10,15}" required />
+      </label>
+    </form>
+
+    <div class="editor-topbar">
+      <h2>Products (<span id="productCount">0</span>)</h2>
+      <button id="addProductBtn" class="admin-btn ghost small">+ Add Product</button>
+    </div>
+
+    <div id="productsEditor" class="products-editor"></div>
+
+    <div class="save-bar">
+      <span id="saveStatus" class="save-status"></span>
+      <button id="saveBtn" class="admin-btn primary">Save &amp; Publish</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
