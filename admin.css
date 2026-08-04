@@ -31,7 +31,7 @@
   border-radius: 8px;
   border: 1px solid var(--border);
   font-size: 14px;
-  color: var(--text);
+  color: var(--ink);
   outline: none;
 }
 .admin-panel input:focus { border-color: var(--primary); }
@@ -75,7 +75,7 @@
 
 .product-row {
   display: grid;
-  grid-template-columns: 56px 1.4fr 0.7fr 0.8fr 1fr 1.2fr auto;
+  grid-template-columns: 56px 1.3fr 0.7fr 0.7fr 0.8fr 1fr auto;
   gap: 8px;
   align-items: center;
   background: var(--card-bg);
@@ -83,6 +83,7 @@
   border-radius: 10px;
   padding: 10px;
 }
+.product-row .row-full { grid-column: 1 / -1; }
 .product-row img,
 .product-row .row-fallback-icon {
   width: 44px;
@@ -102,7 +103,7 @@
   border-radius: 7px;
   border: 1px solid var(--border);
   font-size: 12.5px;
-  color: var(--text);
+  color: var(--ink);
   outline: none;
   width: 100%;
 }

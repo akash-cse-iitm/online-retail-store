@@ -5,7 +5,6 @@ let activeCategory = "all";
 let searchQuery = "";
 
 const productGrid = document.getElementById("productGrid");
-const tabsEl = document.getElementById("tabs");
 const noResultsEl = document.getElementById("noResults");
 const searchInput = document.getElementById("searchInput");
 
@@ -43,32 +42,55 @@ function showToast(msg) {
 
 // ---------- Profile ----------
 function renderProfile() {
-  const { storeName, tagline, ownerName, phone } = STORE.profile;
+  const { storeName, tagline, ownerName, phone, whatsappNumber } = STORE.profile;
   document.title = `${storeName} — Order Groceries Online`;
   document.getElementById("storeName").textContent = storeName;
   document.getElementById("storeTagline").textContent = tagline;
   document.getElementById("footerStoreName").textContent = storeName;
   document.getElementById("footerOwnerName").textContent = ownerName;
   document.getElementById("footerPhone").textContent = phone;
+
+  const waLink = document.getElementById("whatsappQuickLink");
+  waLink.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`Hi ${storeName}, I'd like to know more about your products.`)}`;
 }
 
-// ---------- Tabs ----------
-function renderTabs() {
+// ---------- Shop dropdown (categories) ----------
+function renderShopDropdown() {
+  const menu = document.getElementById("shopDropdownMenu");
   STORE.categories.forEach((cat) => {
     const btn = document.createElement("button");
-    btn.className = "tab";
-    btn.dataset.category = cat.id;
+    btn.type = "button";
     btn.textContent = `${cat.icon} ${cat.label}`;
-    tabsEl.appendChild(btn);
+    btn.addEventListener("click", () => {
+      closeDropdown();
+      const target = document.getElementById(`cat-${cat.id}`);
+      if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+    menu.appendChild(btn);
   });
 
-  tabsEl.addEventListener("click", (e) => {
-    const btn = e.target.closest(".tab");
-    if (!btn) return;
-    tabsEl.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
-    btn.classList.add("active");
-    activeCategory = btn.dataset.category;
-    renderProducts();
+  const dropdown = document.querySelector(".nav-dropdown");
+  const dropdownBtn = document.getElementById("shopDropdownBtn");
+
+  function closeDropdown() {
+    dropdown.classList.remove("open");
+  }
+
+  dropdownBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle("open");
+  });
+  document.addEventListener("click", (e) => {
+    if (!dropdown.contains(e.target)) closeDropdown();
+  });
+}
+
+// ---------- Search toggle ----------
+function initSearchToggle() {
+  const wrap = document.getElementById("searchWrap");
+  document.getElementById("searchToggleBtn").addEventListener("click", () => {
+    wrap.classList.toggle("hidden");
+    if (!wrap.classList.contains("hidden")) searchInput.focus();
   });
 }
 
@@ -92,7 +114,8 @@ function renderProducts() {
       if (!items.length) return;
       const heading = document.createElement("div");
       heading.className = "category-heading";
-      heading.textContent = `${cat.icon} ${cat.label}`;
+      heading.id = `cat-${cat.id}`;
+      heading.textContent = cat.label;
       productGrid.appendChild(heading);
       items.forEach((p) => productGrid.appendChild(renderCard(p)));
     });
@@ -107,14 +130,19 @@ function renderCard(product) {
   card.dataset.id = product.id;
 
   const qty = cart[product.id] || 0;
+  const hasDiscount = product.originalPrice && product.originalPrice > product.price;
 
   card.innerHTML = `
     <div class="product-image">
       ${product.image ? `<img src="${product.image}" alt="${product.name}" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'product-icon-fallback',textContent:'${product.icon}'}))" />` : `<div class="product-icon-fallback">${product.icon}</div>`}
+      ${hasDiscount ? `<span class="discount-badge">${product.discountPercent}% OFF</span>` : ""}
     </div>
-    <p class="product-name">${product.name}</p>
-    <p class="product-unit">${product.unit}</p>
-    <p class="product-price">${formatPrice(product.price)}</p>
+    <p class="product-name">${product.name}${product.unit ? ` <span class="product-unit-inline">(${product.unit})</span>` : ""}</p>
+    <div class="price-row">
+      <span class="price-now">${formatPrice(product.price)}</span>
+      ${hasDiscount ? `<span class="price-was">${formatPrice(product.originalPrice)}</span>` : ""}
+    </div>
+    ${product.description ? `<p class="product-desc">${product.description}</p>` : ""}
     <div class="card-action"></div>
   `;
 
@@ -294,7 +322,8 @@ async function init() {
   const res = await fetch("data.json", { cache: "no-store" });
   STORE = await res.json();
   renderProfile();
-  renderTabs();
+  renderShopDropdown();
+  initSearchToggle();
   renderProducts();
   updateCartUI();
 }

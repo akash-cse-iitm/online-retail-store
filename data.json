@@ -56,7 +56,10 @@
       "unit": "5 kg",
       "price": 235,
       "icon": "🌾",
-      "image": "https://live.staticflickr.com/2348/2070397498_449280bfd2_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Whole_wheat_grain_flour_being_scooped.jpg/500px-Whole_wheat_grain_flour_being_scooped.jpg",
+      "originalPrice": 265,
+      "discountPercent": 11,
+      "description": "Soft, stone-ground atta for fluffy rotis and parathas, milled fresh from quality wheat."
     },
     {
       "id": "g2",
@@ -65,7 +68,10 @@
       "unit": "5 kg",
       "price": 420,
       "icon": "🍚",
-      "image": "https://live.staticflickr.com/6182/6121427720_bde3e8dc66_b.jpg"
+      "image": "https://live.staticflickr.com/6182/6121427720_bde3e8dc66_b.jpg",
+      "originalPrice": 475,
+      "discountPercent": 12,
+      "description": "Long-grain aromatic basmati that stays fluffy and separate, perfect for daily meals and biryani."
     },
     {
       "id": "g3",
@@ -74,7 +80,10 @@
       "unit": "1 kg",
       "price": 165,
       "icon": "🫘",
-      "image": "https://live.staticflickr.com/1179/559482494_ac1ac1eba4_b.jpg"
+      "image": "https://live.staticflickr.com/1179/559482494_ac1ac1eba4_b.jpg",
+      "originalPrice": 190,
+      "discountPercent": 13,
+      "description": "Protein-rich toor dal, a kitchen staple for everyday sambar and dal fry."
     },
     {
       "id": "g4",
@@ -83,7 +92,10 @@
       "unit": "1 kg",
       "price": 130,
       "icon": "🫘",
-      "image": "https://live.staticflickr.com/4104/5194456370_b4a0ebd010_b.jpg"
+      "image": "https://live.staticflickr.com/4104/5194456370_b4a0ebd010_b.jpg",
+      "originalPrice": 150,
+      "discountPercent": 13,
+      "description": "Split moong dal, easy to digest and ideal for khichdi, dal and snacks."
     },
     {
       "id": "g5",
@@ -92,7 +104,10 @@
       "unit": "1 L",
       "price": 145,
       "icon": "🛢️",
-      "image": "https://live.staticflickr.com/22/34581074_d3bede7610_b.jpg"
+      "image": "https://live.staticflickr.com/22/34581074_d3bede7610_b.jpg",
+      "originalPrice": 170,
+      "discountPercent": 15,
+      "description": "Light, cholesterol-free sunflower oil for everyday cooking and frying."
     },
     {
       "id": "g6",
@@ -101,7 +116,10 @@
       "unit": "1 kg",
       "price": 28,
       "icon": "🧂",
-      "image": "https://live.staticflickr.com/105/252462355_a76511a2c3_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Table_salt_with_salt_shaker_V1.jpg/500px-Table_salt_with_salt_shaker_V1.jpg",
+      "originalPrice": 33,
+      "discountPercent": 15,
+      "description": "Iodised table salt, refined for purity and everyday kitchen use."
     },
     {
       "id": "g7",
@@ -110,7 +128,10 @@
       "unit": "1 kg",
       "price": 46,
       "icon": "🍬",
-      "image": "https://live.staticflickr.com/2535/3909490383_3d053a6e98_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Bowl_of_white_sugar.jpg/500px-Bowl_of_white_sugar.jpg",
+      "originalPrice": 55,
+      "discountPercent": 16,
+      "description": "Fine crystal sugar for tea, sweets and everyday cooking needs."
     },
     {
       "id": "g8",
@@ -119,7 +140,10 @@
       "unit": "500 g",
       "price": 58,
       "icon": "🌾",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Soan_sohan_papdi_India_Festive_Sweets.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Soan_sohan_papdi_India_Festive_Sweets.jpg",
+      "originalPrice": 70,
+      "discountPercent": 17,
+      "description": "Roasted gram flour for pakoras, besan chilla and traditional sweets."
     },
     {
       "id": "v1",
@@ -128,7 +152,10 @@
       "unit": "1 kg",
       "price": 35,
       "icon": "🧅",
-      "image": "https://live.staticflickr.com/8177/28151557204_e12a29b25d_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Red_Onion_on_White.JPG/500px-Red_Onion_on_White.JPG",
+      "originalPrice": 47,
+      "discountPercent": 26,
+      "description": "Fresh, firm onions sourced daily — a base essential for Indian cooking."
     },
     {
       "id": "v2",
@@ -137,7 +164,10 @@
       "unit": "1 kg",
       "price": 28,
       "icon": "🥔",
-      "image": "https://live.staticflickr.com/4142/4737211356_f19be62ae0_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Potato_var._Linda_HC2.JPG/500px-Potato_var._Linda_HC2.JPG",
+      "originalPrice": 30,
+      "discountPercent": 7,
+      "description": "Farm-fresh potatoes, great for curries, fries and everyday sabzi."
     },
     {
       "id": "v3",
@@ -146,7 +176,10 @@
       "unit": "1 kg",
       "price": 40,
       "icon": "🍅",
-      "image": "https://live.staticflickr.com/4522/38726625962_3d12c17912_b.jpg"
+      "image": "https://live.staticflickr.com/4522/38726625962_3d12c17912_b.jpg",
+      "originalPrice": 43,
+      "discountPercent": 7,
+      "description": "Juicy, ripe tomatoes for curries, chutneys and salads."
     },
     {
       "id": "v4",
@@ -155,7 +188,10 @@
       "unit": "500 g",
       "price": 35,
       "icon": "🫑",
-      "image": "https://live.staticflickr.com/4114/4783962793_3faa4051c3_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Green-Bell-Pepper.jpg/500px-Green-Bell-Pepper.jpg",
+      "originalPrice": 38,
+      "discountPercent": 8,
+      "description": "Crisp green capsicum, perfect for stir-fries and stuffed sabzi."
     },
     {
       "id": "v5",
@@ -164,7 +200,10 @@
       "unit": "1 pc",
       "price": 30,
       "icon": "🥦",
-      "image": "https://images.rawpixel.com/editor_1024/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTExL2ZsNTE2Njg0OTA3MTktaW1hZ2UuanBn.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Stack_of_cauliflower_heads.jpg/500px-Stack_of_cauliflower_heads.jpg",
+      "originalPrice": 33,
+      "discountPercent": 9,
+      "description": "Fresh white cauliflower, ideal for gobi sabzi and parathas."
     },
     {
       "id": "v6",
@@ -173,7 +212,10 @@
       "unit": "1 bunch",
       "price": 20,
       "icon": "🥬",
-      "image": "https://live.staticflickr.com/2499/3946929356_a71a71b6fb.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Liat_Portal_for_Foodie_Disorder_-_Fresh_Spinach.jpg/500px-Liat_Portal_for_Foodie_Disorder_-_Fresh_Spinach.jpg",
+      "originalPrice": 22,
+      "discountPercent": 9,
+      "description": "Tender spinach leaves, rich in iron — great for saag and soups."
     },
     {
       "id": "f1",
@@ -182,7 +224,10 @@
       "unit": "1 dozen",
       "price": 55,
       "icon": "🍌",
-      "image": "https://live.staticflickr.com/135/350002649_ee520b3303.jpg"
+      "image": "https://live.staticflickr.com/135/350002649_ee520b3303.jpg",
+      "originalPrice": 61,
+      "discountPercent": 10,
+      "description": "Naturally ripened bananas, a healthy everyday snack."
     },
     {
       "id": "f2",
@@ -191,7 +236,10 @@
       "unit": "1 kg",
       "price": 180,
       "icon": "🍎",
-      "image": "https://live.staticflickr.com/65535/49228762432_cb183cd394_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Liat_Portal_for_Foodie_Disorder_-_Red_Apple_%28Whole_Fruit%29.jpg/500px-Liat_Portal_for_Foodie_Disorder_-_Red_Apple_%28Whole_Fruit%29.jpg",
+      "originalPrice": 200,
+      "discountPercent": 10,
+      "description": "Crisp, sweet Shimla apples picked at peak freshness."
     },
     {
       "id": "f3",
@@ -200,7 +248,10 @@
       "unit": "1 pc",
       "price": 40,
       "icon": "🥭",
-      "image": "https://live.staticflickr.com/3119/3355136642_51f8dc3eb5_b.jpg"
+      "image": "https://live.staticflickr.com/3119/3355136642_51f8dc3eb5_b.jpg",
+      "originalPrice": 45,
+      "discountPercent": 11,
+      "description": "Ripe, soft papaya — light, healthy and easy to digest."
     },
     {
       "id": "f4",
@@ -209,7 +260,10 @@
       "unit": "1 kg",
       "price": 90,
       "icon": "🍊",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/37/Orange_fruit_%28Citrus_%C3%97_sinensis%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/37/Orange_fruit_%28Citrus_%C3%97_sinensis%29.jpg",
+      "originalPrice": 105,
+      "discountPercent": 14,
+      "description": "Juicy citrus oranges, packed with vitamin C."
     },
     {
       "id": "d1",
@@ -218,7 +272,10 @@
       "unit": "500 ml",
       "price": 30,
       "icon": "🥛",
-      "image": "https://live.staticflickr.com/1123/603813014_41a2f1c968_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Tetra-Milk-Carton---Betsukai-Milk---2024-04-27_10.jpg/500px-Tetra-Milk-Carton---Betsukai-Milk---2024-04-27_10.jpg",
+      "originalPrice": 33,
+      "discountPercent": 9,
+      "description": "Fresh, pasteurised toned milk delivered daily."
     },
     {
       "id": "d2",
@@ -227,7 +284,10 @@
       "unit": "100 g",
       "price": 58,
       "icon": "🧈",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/75/Croissant_2%2C_Butter_Block%2C_Buffalo%2C_New_York%2C_USA_%2853776803927%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Block_of_butter_in_butter_dish.jpg/500px-Block_of_butter_in_butter_dish.jpg",
+      "originalPrice": 64,
+      "discountPercent": 9,
+      "description": "Creamy, rich table butter made from pure milk."
     },
     {
       "id": "d3",
@@ -236,7 +296,10 @@
       "unit": "200 g",
       "price": 90,
       "icon": "🧀",
-      "image": "https://live.staticflickr.com/6173/6181952938_582ae5eb02_b.jpg"
+      "image": "https://live.staticflickr.com/6173/6181952938_582ae5eb02_b.jpg",
+      "originalPrice": 99,
+      "discountPercent": 9,
+      "description": "Soft, fresh paneer cubes for curries and snacks."
     },
     {
       "id": "d4",
@@ -245,7 +308,10 @@
       "unit": "1 pack",
       "price": 40,
       "icon": "🍞",
-      "image": "https://live.staticflickr.com/8548/8755073633_b85eda68b5_b.jpg"
+      "image": "https://live.staticflickr.com/8548/8755073633_b85eda68b5_b.jpg",
+      "originalPrice": 45,
+      "discountPercent": 11,
+      "description": "Soft sandwich bread, baked fresh for your daily breakfast."
     },
     {
       "id": "d5",
@@ -254,7 +320,10 @@
       "unit": "400 g",
       "price": 35,
       "icon": "🥣",
-      "image": "https://live.staticflickr.com/188/408796126_39e0761eae_b.jpg"
+      "image": "https://live.staticflickr.com/188/408796126_39e0761eae_b.jpg",
+      "originalPrice": 40,
+      "discountPercent": 12,
+      "description": "Thick, fresh curd set daily — great for raita and lassi."
     },
     {
       "id": "s1",
@@ -263,7 +332,10 @@
       "unit": "52 g",
       "price": 20,
       "icon": "🍟",
-      "image": "https://live.staticflickr.com/4024/4288174278_430883123a_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Traditionelle_kartoffelchips.jpg/500px-Traditionelle_kartoffelchips.jpg",
+      "originalPrice": 26,
+      "discountPercent": 23,
+      "description": "Crunchy, thinly-sliced potato chips, lightly salted."
     },
     {
       "id": "s2",
@@ -272,7 +344,10 @@
       "unit": "250 g",
       "price": 30,
       "icon": "🍪",
-      "image": "https://live.staticflickr.com/2564/3757167177_d9df057a9e_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Cookies_%286672151563%29.jpg/500px-Cookies_%286672151563%29.jpg",
+      "originalPrice": 39,
+      "discountPercent": 23,
+      "description": "Classic glucose biscuits, a household favourite with tea."
     },
     {
       "id": "s3",
@@ -281,7 +356,10 @@
       "unit": "200 g",
       "price": 65,
       "icon": "🥨",
-      "image": "https://live.staticflickr.com/4845/32658027538_3f18014a9e.jpg"
+      "image": "https://live.staticflickr.com/4845/32658027538_3f18014a9e.jpg",
+      "originalPrice": 86,
+      "discountPercent": 24,
+      "description": "Crispy, spiced Indian namkeen mix — perfect tea-time snack."
     },
     {
       "id": "s4",
@@ -290,7 +368,10 @@
       "unit": "4 pack",
       "price": 56,
       "icon": "🍜",
-      "image": "https://live.staticflickr.com/3002/2416809777_a6464726aa_b.jpg"
+      "image": "https://live.staticflickr.com/3002/2416809777_a6464726aa_b.jpg",
+      "originalPrice": 75,
+      "discountPercent": 25,
+      "description": "Quick-cooking instant noodles with masala tastemaker."
     },
     {
       "id": "b1",
@@ -299,7 +380,10 @@
       "unit": "750 ml",
       "price": 40,
       "icon": "🥤",
-      "image": "https://live.staticflickr.com/8893/18533898981_bc466e53dc_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/770ml_Coca-Cola_Glass_Bottles_in_Taiwan.jpg/500px-770ml_Coca-Cola_Glass_Bottles_in_Taiwan.jpg",
+      "originalPrice": 43,
+      "discountPercent": 7,
+      "description": "Chilled, fizzy cola — the everyday refreshment."
     },
     {
       "id": "b2",
@@ -308,7 +392,10 @@
       "unit": "1 L",
       "price": 110,
       "icon": "🧃",
-      "image": "https://live.staticflickr.com/4147/5084101811_9f84644414_b.jpg"
+      "image": "https://live.staticflickr.com/4147/5084101811_9f84644414_b.jpg",
+      "originalPrice": 120,
+      "discountPercent": 8,
+      "description": "100% fruit juice, no added preservatives, naturally refreshing."
     },
     {
       "id": "b3",
@@ -317,7 +404,10 @@
       "unit": "250 g",
       "price": 130,
       "icon": "🍵",
-      "image": "https://live.staticflickr.com/3702/9235413327_46a4b098c7_b.jpg"
+      "image": "https://live.staticflickr.com/3702/9235413327_46a4b098c7_b.jpg",
+      "originalPrice": 140,
+      "discountPercent": 7,
+      "description": "Strong, aromatic CTC tea leaves for the perfect daily cup."
     },
     {
       "id": "b4",
@@ -326,7 +416,10 @@
       "unit": "50 g",
       "price": 145,
       "icon": "☕",
-      "image": "https://live.staticflickr.com/3543/4605291784_bb3452c60a_b.jpg"
+      "image": "https://live.staticflickr.com/3543/4605291784_bb3452c60a_b.jpg",
+      "originalPrice": 160,
+      "discountPercent": 9,
+      "description": "Rich, instant coffee granules for a quick energising brew."
     },
     {
       "id": "p1",
@@ -335,7 +428,10 @@
       "unit": "150 g",
       "price": 95,
       "icon": "🪥",
-      "image": "https://live.staticflickr.com/2371/2522040782_776aeb5e0a_b.jpg"
+      "image": "https://live.staticflickr.com/2371/2522040782_776aeb5e0a_b.jpg",
+      "originalPrice": 120,
+      "discountPercent": 21,
+      "description": "Cavity-protection toothpaste for complete oral care."
     },
     {
       "id": "p2",
@@ -344,7 +440,10 @@
       "unit": "1 pc",
       "price": 55,
       "icon": "🧼",
-      "image": "https://live.staticflickr.com/1385/768696198_3fd867635f_b.jpg"
+      "image": "https://live.staticflickr.com/1385/768696198_3fd867635f_b.jpg",
+      "originalPrice": 69,
+      "discountPercent": 20,
+      "description": "Moisturising beauty soap bar with a quarter cream."
     },
     {
       "id": "p3",
@@ -353,7 +452,10 @@
       "unit": "180 ml",
       "price": 175,
       "icon": "🧴",
-      "image": "https://live.staticflickr.com/2613/3691086498_0a94578156_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Green_shampoo_bottle.jpg/500px-Green_shampoo_bottle.jpg",
+      "originalPrice": 225,
+      "discountPercent": 22,
+      "description": "Anti-dandruff shampoo for clean, healthy-looking hair."
     },
     {
       "id": "h1",
@@ -362,7 +464,10 @@
       "unit": "1 pc",
       "price": 20,
       "icon": "🧽",
-      "image": "https://live.staticflickr.com/4892/46386499361_ab92f0607e_b.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Aleppo_soap_01.jpg/500px-Aleppo_soap_01.jpg",
+      "originalPrice": 23,
+      "discountPercent": 13,
+      "description": "Tough on grease dishwash bar for spotless utensils."
     },
     {
       "id": "h2",
@@ -371,7 +476,10 @@
       "unit": "1 kg",
       "price": 130,
       "icon": "🧺",
-      "image": "https://live.staticflickr.com/3852/15008250459_ff647cd662_b.jpg"
+      "image": "https://live.staticflickr.com/3852/15008250459_ff647cd662_b.jpg",
+      "originalPrice": 150,
+      "discountPercent": 13,
+      "description": "Powerful detergent powder for bright, clean clothes."
     },
     {
       "id": "h3",
@@ -380,7 +488,10 @@
       "unit": "500 ml",
       "price": 95,
       "icon": "🧹",
-      "image": "https://live.staticflickr.com/4194/34517609932_d59ff155c8_b.jpg"
+      "image": "https://live.staticflickr.com/4194/34517609932_d59ff155c8_b.jpg",
+      "originalPrice": 110,
+      "discountPercent": 14,
+      "description": "Disinfectant toilet cleaner that kills 99.9% germs."
     }
   ]
 }

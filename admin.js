@@ -187,9 +187,11 @@ function buildProductRow(product) {
     <input type="text" class="f-name" value="${escapeAttr(product.name)}" placeholder="Product name" />
     <input type="text" class="f-unit" value="${escapeAttr(product.unit)}" placeholder="Unit (e.g. 1 kg)" />
     <input type="number" class="f-price" value="${product.price}" min="0" step="1" placeholder="Price" />
+    <input type="number" class="f-original-price" value="${product.originalPrice || ""}" min="0" step="1" placeholder="MRP (optional)" />
     <select class="f-category">${categoryOptions}</select>
-    <input type="text" class="f-image" value="${escapeAttr(product.image || "")}" placeholder="Image URL" />
     <button type="button" class="row-remove" title="Remove product">🗑️</button>
+    <input type="text" class="f-image row-full" value="${escapeAttr(product.image || "")}" placeholder="Image URL" />
+    <input type="text" class="f-description row-full" value="${escapeAttr(product.description || "")}" placeholder="Short description shown on the card" />
   `;
 
   row.querySelector(".row-remove").addEventListener("click", () => {
@@ -243,6 +245,16 @@ function collectFormIntoStoreData() {
     product.price = Number(row.querySelector(".f-price").value) || 0;
     product.category = row.querySelector(".f-category").value;
     product.image = row.querySelector(".f-image").value.trim();
+    product.description = row.querySelector(".f-description").value.trim();
+
+    const originalPriceRaw = row.querySelector(".f-original-price").value.trim();
+    if (originalPriceRaw && Number(originalPriceRaw) > product.price) {
+      product.originalPrice = Number(originalPriceRaw);
+      product.discountPercent = Math.round((1 - product.price / product.originalPrice) * 100);
+    } else {
+      delete product.originalPrice;
+      delete product.discountPercent;
+    }
   });
 }
 
