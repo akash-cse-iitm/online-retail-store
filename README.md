@@ -67,32 +67,3 @@ The seed catalog ships with free Creative Commons stock photos (see `image-credi
 
 Orders use **WhatsApp Click-to-Chat** (`wa.me` links) — the free, no-approval way to receive orders on a static site: tapping "Order Now on WhatsApp" opens a pre-filled message (items, total, customer name/phone/address, and "Payment: Cash on Delivery") in WhatsApp, which the customer sends themselves. This is different from the paid **WhatsApp Business Platform API** (used for automated bot replies), which requires a Meta Business account and a backend server — out of scope for a static, no-backend site like this one. If a pop-up blocker prevents the WhatsApp tab from opening, a fallback link appears so the order is never lost.
 
-## Deploy
-
-Pick any one of these — all of them just serve the repo's static files, no build step required.
-
-### GitHub Pages
-
-```bash
-git remote add origin https://github.com/<your-username>/<repo-name>.git
-git branch -M main
-git push -u origin main
-```
-
-Then on GitHub: **Settings → Pages** → Source: `Deploy from a branch` → Branch `main`, folder `/ (root)` → **Save**. Live at `https://<your-username>.github.io/<repo-name>/` within a minute or two.
-
-### Vercel
-
-Push to GitHub as above, then [vercel.com](https://vercel.com) → **Add New → Project** → import the repo. Leave all build settings blank (no framework, no build command) → **Deploy**.
-
-### Netlify
-
-Push to GitHub, then [app.netlify.com](https://app.netlify.com) → **Add new site → Import an existing project** → pick the repo. Build command: leave empty. Publish directory: `.` (the included `netlify.toml` already sets this, so the defaults just work).
-
-### Render
-
-Push to GitHub, then [dashboard.render.com](https://dashboard.render.com) → **New → Static Site** → connect the repo. Build command: leave empty. Publish directory: `.` (repo root).
-
-### After deploying
-
-Use the admin panel exactly the same way regardless of host — connect with your GitHub token, edit, Save & Publish. Every commit the admin panel makes (data, images, credentials) triggers a fresh redeploy on all four platforms automatically. Changes are typically live within about a minute; if you still see old data, hard-refresh (the storefront also fetches `data.json` with caching disabled, but your host's CDN may cache briefly).
