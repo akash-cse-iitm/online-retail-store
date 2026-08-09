@@ -2,7 +2,7 @@
   "profile": {
     "storeName": "Maa Annapurna Mart",
     "tagline": "Fresh Groceries",
-    "ownerName": "Dhullu Bhai",
+    "ownerName": "Swez Kumar Saw ",
     "phone": "+91 9608907233",
     "whatsappNumber": "919608907233",
     "address": "Govindpur, Dhanbad",
@@ -51,6 +51,11 @@
       "id": "household",
       "label": "Household",
       "icon": "🧹"
+    },
+    {
+      "id": "cat_msm36jrn",
+      "label": "New Category",
+      "icon": "🏷️"
     }
   ],
   "products": [
