@@ -84,7 +84,20 @@
 .admin-btn.ghost:hover { background: var(--primary-soft); border-color: var(--primary-light); }
 .admin-btn.small { padding: 8px 14px; font-size: 12.5px; }
 
-.admin-error { color: #c0392b; font-size: 12.5px; margin: 4px 0 0; font-weight: 650; }
+.admin-error {
+  color: #c0392b;
+  font-size: 12.5px;
+  margin: 4px 0 0;
+  font-weight: 650;
+  line-height: 1.65;
+  /* Error explanations are multi-line checklists — keep their line breaks. */
+  white-space: pre-line;
+  background: #fdf2f1;
+  border: 1px solid #f3ceca;
+  border-radius: var(--radius-sm);
+  padding: 11px 13px;
+}
+.admin-error:empty { display: none; }
 
 /* ---------- Tabs ---------- */
 .editor-topbar {
@@ -352,11 +365,21 @@
   align-items: center;
   justify-content: flex-end;
   gap: 14px;
+  flex-wrap: wrap;
   border-top: 1px solid var(--border);
 }
-.save-status { font-size: 12.5px; color: var(--muted); font-weight: 650; }
+.save-status { font-size: 12.5px; color: var(--muted); font-weight: 650; white-space: pre-line; line-height: 1.6; }
 .save-status.success { color: var(--primary-dark); font-weight: 700; }
-.save-status.error { color: #c0392b; font-weight: 700; }
+.save-status.error {
+  color: #c0392b;
+  font-weight: 650;
+  text-align: left;
+  background: #fdf2f1;
+  border: 1px solid #f3ceca;
+  border-radius: var(--radius-sm);
+  padding: 11px 13px;
+  flex: 1;
+}
 
 @media (max-width: 700px) {
   .admin-main { padding: 18px 12px 110px; }

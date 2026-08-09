@@ -169,34 +169,104 @@ $("disconnectBtn").addEventListener("click", () => {
 });
 
 // ---------- GitHub API helpers ----------
-async function ghGet(path) {
-  const res = await fetch(
-    `https://api.github.com/repos/${ghConfig.owner}/${ghConfig.repo}/contents/${path}?ref=${encodeURIComponent(ghConfig.branch)}`,
-    { headers: { Authorization: `Bearer ${ghConfig.token}`, Accept: "application/vnd.github+json" } }
-  );
+class GitHubError extends Error {
+  constructor(message, status, path) {
+    super(message);
+    this.name = "GitHubError";
+    this.status = status;
+    this.path = path;
+  }
+}
+
+// GitHub's raw messages ("Resource not accessible by personal access token")
+// don't tell you which knob to turn, so map the common statuses to the actual fix.
+function explainGhError(err) {
+  if (err && err.name === "TypeError") {
+    return "Couldn't reach GitHub — check your internet connection and try again.";
+  }
+  if (!(err instanceof GitHubError)) return err.message;
+
+  const repo = ghConfig ? `${ghConfig.owner}/${ghConfig.repo}` : "your repo";
+  const branch = ghConfig ? ghConfig.branch : "main";
+
+  switch (err.status) {
+    case 401:
+      return `${err.message}\n\nThe token was rejected — it may be expired, revoked, or mistyped. Generate a new one and reconnect.`;
+    case 403:
+      return (
+        `${err.message}\n\n` +
+        `The token is valid, but it isn't allowed to write to ${repo}. Check these, in order:\n` +
+        `• Repository permissions → Contents must be "Read and write" (Read-only authenticates fine but fails here)\n` +
+        `• Repository access → "Only select repositories", with this repo ticked\n` +
+        `• If the repo belongs to an organization, the token's Resource owner must be that org — and an org admin may still need to approve the token`
+      );
+    case 404:
+      return (
+        `${err.message}\n\n` +
+        `Couldn't find ${repo}${err.path ? ` → ${err.path}` : ""} on branch "${branch}". Check that:\n` +
+        `• The owner, repo name and branch are spelled exactly right (they're case-sensitive)\n` +
+        `• The token has access to this repo — a repo the token can't see also returns 404`
+      );
+    case 409:
+    case 422:
+      return (
+        `${err.message}\n\n` +
+        `This file changed on GitHub after you loaded it here, so saving would overwrite those newer changes. ` +
+        `Click Disconnect, log back in and reconnect to load the latest version, then redo your edits.`
+      );
+    default:
+      return `${err.message} (HTTP ${err.status})`;
+  }
+}
+
+// Compact variant for the inline upload-status spans, where a full checklist
+// wouldn't fit. The Save bar shows the long form.
+function shortGhError(err) {
+  if (err && err.name === "TypeError") return "no connection to GitHub";
+  if (!(err instanceof GitHubError)) return err.message;
+  switch (err.status) {
+    case 401: return "token rejected — generate a new one";
+    case 403: return 'token needs "Contents: Read and write" on this repo';
+    case 404: return "repo/branch not found, or token has no access";
+    default: return `${err.message} (HTTP ${err.status})`;
+  }
+}
+
+async function ghRequest(url, options, path) {
+  let res;
+  try {
+    res = await fetch(url, options);
+  } catch (netErr) {
+    netErr.name = "TypeError";
+    throw netErr;
+  }
   if (!res.ok) {
     const body = await res.json().catch(() => ({}));
-    throw new Error(body.message || `GitHub error ${res.status}`);
+    throw new GitHubError(body.message || `GitHub error ${res.status}`, res.status, path);
   }
   return res.json();
+}
+
+async function ghGet(path) {
+  return ghRequest(
+    `https://api.github.com/repos/${ghConfig.owner}/${ghConfig.repo}/contents/${path}?ref=${encodeURIComponent(ghConfig.branch)}`,
+    { headers: { Authorization: `Bearer ${ghConfig.token}`, Accept: "application/vnd.github+json" } },
+    path
+  );
 }
 
 async function ghPut(path, { content, sha, message }) {
   const body = { message, content, branch: ghConfig.branch };
   if (sha) body.sha = sha;
-  const res = await fetch(
+  return ghRequest(
     `https://api.github.com/repos/${ghConfig.owner}/${ghConfig.repo}/contents/${path}`,
     {
       method: "PUT",
       headers: { Authorization: `Bearer ${ghConfig.token}`, Accept: "application/vnd.github+json" },
       body: JSON.stringify(body),
-    }
+    },
+    path
   );
-  if (!res.ok) {
-    const body2 = await res.json().catch(() => ({}));
-    throw new Error(body2.message || `GitHub error ${res.status}`);
-  }
-  return res.json();
 }
 
 // ---------- GitHub connect ----------
@@ -245,7 +315,7 @@ $("connectForm").addEventListener("submit", async (e) => {
     dirty = false;
     populateEditor();
   } catch (err) {
-    errEl.textContent = "Could not load data.json — " + err.message;
+    errEl.textContent = "Could not load data.json — " + explainGhError(err);
     errEl.classList.remove("hidden");
   } finally {
     btn.disabled = false;
@@ -388,7 +458,7 @@ function wireProfileFormOnce() {
       statusEl.className = "upload-status success";
       markDirty();
     } catch (err) {
-      statusEl.textContent = "Failed — " + err.message;
+      statusEl.textContent = "Failed — " + shortGhError(err);
       statusEl.className = "upload-status error";
     } finally {
       e.target.value = "";
@@ -632,7 +702,7 @@ function wireProductCard(card, product) {
       statusEl.className = "upload-status success";
       markDirty();
     } catch (err) {
-      statusEl.textContent = "Failed — " + err.message;
+      statusEl.textContent = "Failed — " + shortGhError(err);
       statusEl.className = "upload-status error";
     } finally {
       e.target.value = "";
@@ -749,7 +819,7 @@ $("saveBtn").addEventListener("click", async () => {
     statusEl.className = "save-status success";
     renderCategoryRows(); // refresh product counts per category
   } catch (err) {
-    statusEl.textContent = "Save failed — " + err.message;
+    statusEl.textContent = "Save failed — " + explainGhError(err);
     statusEl.className = "save-status error";
   } finally {
     btn.disabled = false;
@@ -782,7 +852,7 @@ async function saveAccountSettings(e) {
     statusEl.textContent = "Password updated — use it next time you log in.";
     statusEl.className = "save-status success";
   } catch (err) {
-    statusEl.textContent = "Update failed — " + err.message;
+    statusEl.textContent = "Update failed — " + explainGhError(err);
     statusEl.className = "save-status error";
   } finally {
     $("accountSaveBtn").disabled = false;
