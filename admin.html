@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Admin — Maa Annapurna Mart</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛠️</text></svg>" />
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="admin.css" />
 </head>
@@ -15,7 +16,7 @@
       <span class="brand-icon">🛠️</span>
       <div class="brand-text">
         <h1>Store Admin</h1>
-        <p class="tagline">Edit products, prices, images &amp; profile</p>
+        <p class="tagline">Edit products, prices, images &amp; shop details</p>
       </div>
     </div>
     <a href="index.html" class="admin-back-link">← Back to store</a>
@@ -33,7 +34,7 @@
         Password
         <input type="password" id="loginPassword" required autocomplete="current-password" />
       </label>
-      <button type="submit" class="admin-btn primary">Unlock</button>
+      <button type="submit" class="admin-btn primary" id="loginSubmitBtn" disabled>Loading…</button>
       <p id="loginError" class="admin-error hidden">Incorrect password.</p>
     </form>
   </section>
@@ -42,7 +43,7 @@
   <section id="connectPanel" class="admin-panel hidden">
     <h2>Connect to GitHub</h2>
     <p class="admin-hint">
-      Changes you save here are committed directly to <code>data.json</code> in your GitHub repo, so they go live for every visitor after GitHub Pages rebuilds (usually under a minute).
+      Changes you save here — including uploaded images — are committed directly to your GitHub repo, so they go live for every visitor after your host rebuilds (usually under a minute).
       Create a token at <a href="https://github.com/settings/tokens?type=beta" target="_blank" rel="noopener">github.com/settings/tokens</a> (fine-grained, scoped to just this repo, with <strong>Contents: Read and write</strong> permission). The token is stored only in this browser's local storage — never committed to the repo.
     </p>
     <form id="connectForm">
@@ -74,39 +75,107 @@
   <!-- Step 3: editor -->
   <section id="editorPanel" class="admin-panel hidden">
     <div class="editor-topbar">
-      <h2>Store Profile</h2>
+      <div class="admin-tabs" id="adminTabs">
+        <button type="button" class="admin-tab-btn active" data-tab="profile">🏪 Shop Profile</button>
+        <button type="button" class="admin-tab-btn" data-tab="categories">🗂️ Categories</button>
+        <button type="button" class="admin-tab-btn" data-tab="products">📦 Products</button>
+        <button type="button" class="admin-tab-btn" data-tab="account">🔐 Account</button>
+      </div>
       <button id="disconnectBtn" class="admin-btn ghost small">Disconnect</button>
     </div>
 
-    <form id="profileForm" class="profile-form">
-      <label>
-        Store Name
-        <input type="text" id="fStoreName" required />
-      </label>
-      <label>
-        Tagline
-        <input type="text" id="fTagline" required />
-      </label>
-      <label>
-        Owner / Contact Person Name
-        <input type="text" id="fOwnerName" required />
-      </label>
-      <label>
-        Display Phone Number (shown in footer)
-        <input type="text" id="fPhone" placeholder="+91 98765 43210" required />
-      </label>
-      <label>
-        WhatsApp Number (digits only, with country code — used for orders)
-        <input type="text" id="fWhatsapp" placeholder="919876543210" pattern="[0-9]{10,15}" required />
-      </label>
-    </form>
-
-    <div class="editor-topbar">
-      <h2>Products (<span id="productCount">0</span>)</h2>
-      <button id="addProductBtn" class="admin-btn ghost small">+ Add Product</button>
+    <!-- Shop Profile tab -->
+    <div class="admin-tab-panel" id="tab-profile">
+      <h2>Shop Profile</h2>
+      <p class="admin-hint">Everything here shows up somewhere on your storefront — header, footer, or the WhatsApp order message.</p>
+      <form id="profileForm" class="profile-form" onsubmit="return false;">
+        <label>
+          Shop Logo
+          <span class="logo-upload-row">
+            <img id="logoPreview" class="logo-preview hidden" alt="Logo preview" />
+            <label class="admin-btn ghost small upload-btn-label">
+              Upload Logo
+              <input type="file" accept="image/*" id="fLogoFile" class="hidden" />
+            </label>
+            <span class="upload-status" id="logoUploadStatus"></span>
+          </span>
+        </label>
+        <label>
+          Store Name
+          <input type="text" id="fStoreName" required />
+        </label>
+        <label>
+          Tagline
+          <input type="text" id="fTagline" required />
+        </label>
+        <label>
+          Owner / Contact Person Name
+          <input type="text" id="fOwnerName" required />
+        </label>
+        <label>
+          Display Phone Number (shown in footer)
+          <input type="text" id="fPhone" placeholder="+91 98765 43210" required />
+        </label>
+        <label>
+          WhatsApp Number (digits only, with country code — used for orders)
+          <input type="text" id="fWhatsapp" placeholder="919876543210" required />
+        </label>
+        <label class="row-full">
+          Shop Address (optional, shown in footer)
+          <input type="text" id="fAddress" placeholder="Shop no, street, area, city" />
+        </label>
+        <label class="row-full">
+          Delivery Note (optional, e.g. area covered, timing)
+          <input type="text" id="fDeliveryNote" placeholder="Delivery within 5 km · usually same day" />
+        </label>
+        <label class="row-full">
+          Payment Note
+          <input type="text" id="fPaymentNote" placeholder="Cash on Delivery — pay when your order arrives" />
+        </label>
+        <label class="admin-checkbox row-full">
+          <input type="checkbox" id="fIsOpen" checked />
+          Shop is currently open (unticking shows a "closed" banner to customers)
+        </label>
+      </form>
     </div>
 
-    <div id="productsEditor" class="products-editor"></div>
+    <!-- Categories tab -->
+    <div class="admin-tab-panel hidden" id="tab-categories">
+      <div class="editor-topbar">
+        <h2>Categories</h2>
+        <button id="addCategoryBtn" type="button" class="admin-btn ghost small">+ Add Category</button>
+      </div>
+      <p class="admin-hint">Reorder with the arrows — this is the order categories appear on the storefront. Deleting a category moves its products to "Uncategorized" instead of losing them.</p>
+      <div id="categoriesEditor" class="categories-editor"></div>
+    </div>
+
+    <!-- Products tab -->
+    <div class="admin-tab-panel hidden" id="tab-products">
+      <div class="editor-topbar">
+        <h2>Products (<span id="productCount">0</span>)</h2>
+        <button id="addProductBtn" type="button" class="admin-btn primary small">+ Add Product</button>
+      </div>
+      <input type="text" id="productSearch" class="product-search" placeholder="🔍 Search products to edit..." />
+      <div id="productsEditor" class="products-editor"></div>
+    </div>
+
+    <!-- Account tab -->
+    <div class="admin-tab-panel hidden" id="tab-account">
+      <h2>Account Settings</h2>
+      <p class="admin-hint">Change the password used on this login screen. This updates <code>admin-config.json</code> in your repo via the same GitHub token — it does not affect the token itself.</p>
+      <form id="accountForm" onsubmit="return false;">
+        <label>
+          New Password
+          <input type="password" id="accPassword" placeholder="At least 6 characters" autocomplete="new-password" required />
+        </label>
+        <label>
+          Confirm New Password
+          <input type="password" id="accPasswordConfirm" autocomplete="new-password" required />
+        </label>
+        <button type="submit" id="accountSaveBtn" class="admin-btn primary">Update Password</button>
+        <p id="accountStatus" class="save-status"></p>
+      </form>
+    </div>
 
     <div class="save-bar">
       <span id="saveStatus" class="save-status"></span>

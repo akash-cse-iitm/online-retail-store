@@ -4,7 +4,12 @@
     "tagline": "Fresh Groceries, Delivered with Love",
     "ownerName": "Person DHN",
     "phone": "+91 98765 43210",
-    "whatsappNumber": "919876543210"
+    "whatsappNumber": "919876543210",
+    "address": "",
+    "deliveryNote": "Delivery within 5 km · Usually delivered same day",
+    "paymentNote": "Cash on Delivery — pay when your order arrives",
+    "logo": "",
+    "isOpen": true
   },
   "categories": [
     {
