@@ -16,18 +16,23 @@
       "id": "cat_msrwwvgf",
       "label": "Grocery ",
       "icon": ""
+    },
+    {
+      "id": "cat_msrx66pl",
+      "label": "New Category",
+      "icon": "🏷️"
     }
   ],
   "products": [
     {
       "id": "g1",
       "category": "uncategorized",
-      "name": "Tata Atta",
+      "name": "Ashirvaad Atta",
       "unit": "5 kg",
-      "price": 235,
+      "price": 240,
       "icon": "🌾",
-      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Whole_wheat_grain_flour_being_scooped.jpg/500px-Whole_wheat_grain_flour_being_scooped.jpg",
-      "originalPrice": 265,
+      "image": "https://share.google/aM9b4wdA3B2wY7dNF",
+      "originalPrice": 278,
       "discountPercent": 11,
       "description": "Soft, stone-ground atta for fluffy rotis and parathas, milled fresh from quality wheat."
     },
