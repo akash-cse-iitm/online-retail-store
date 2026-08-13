@@ -1,67 +1,27 @@
 {
   "profile": {
-    "storeName": "Maa Annapurna Mart",
-    "tagline": "Fresh Groceries",
+    "storeName": "Maa Annapurna Bhandar (Mart)",
+    "tagline": "Wholesale Rate",
     "ownerName": "Swez Kumar Saw ",
     "phone": "+91 9608907233",
     "whatsappNumber": "919608907233",
     "address": "Govindpur, Dhanbad",
     "deliveryNote": "Delivery within 5 km",
-    "paymentNote": "Pay on Delivery",
+    "paymentNote": "Pay on Delivery ",
     "logo": "",
     "isOpen": true
   },
   "categories": [
     {
-      "id": "grocery",
-      "label": "Grocery",
-      "icon": "🌾"
-    },
-    {
-      "id": "vegetables",
-      "label": "Vegetables",
-      "icon": "🥦"
-    },
-    {
-      "id": "fruits",
-      "label": "Fruits",
-      "icon": "🍎"
-    },
-    {
-      "id": "dairy",
-      "label": "Dairy & Bakery",
-      "icon": "🥛"
-    },
-    {
-      "id": "snacks",
-      "label": "Snacks",
-      "icon": "🍪"
-    },
-    {
-      "id": "beverages",
-      "label": "Beverages",
-      "icon": "🧃"
-    },
-    {
-      "id": "personal-care",
-      "label": "Personal Care",
-      "icon": "🧴"
-    },
-    {
-      "id": "household",
-      "label": "Household",
-      "icon": "🧹"
-    },
-    {
-      "id": "cat_msm36jrn",
-      "label": "New Category",
-      "icon": "🏷️"
+      "id": "cat_msrwwvgf",
+      "label": "Grocery ",
+      "icon": ""
     }
   ],
   "products": [
     {
       "id": "g1",
-      "category": "grocery",
+      "category": "uncategorized",
       "name": "Tata Atta",
       "unit": "5 kg",
       "price": 235,
@@ -73,7 +33,7 @@
     },
     {
       "id": "g2",
-      "category": "grocery",
+      "category": "uncategorized",
       "name": "India Gate Basmati Rice",
       "unit": "5 kg",
       "price": 420,
@@ -85,7 +45,7 @@
     },
     {
       "id": "g3",
-      "category": "grocery",
+      "category": "uncategorized",
       "name": "Toor Dal",
       "unit": "1 kg",
       "price": 165,
@@ -97,7 +57,7 @@
     },
     {
       "id": "g4",
-      "category": "grocery",
+      "category": "uncategorized",
       "name": "Moong Dal",
       "unit": "1 kg",
       "price": 130,
@@ -109,7 +69,7 @@
     },
     {
       "id": "g5",
-      "category": "grocery",
+      "category": "uncategorized",
       "name": "Fortune Sunflower Oil",
       "unit": "1 L",
       "price": 145,
@@ -121,7 +81,7 @@
     },
     {
       "id": "g6",
-      "category": "grocery",
+      "category": "uncategorized",
       "name": "Tata Salt",
       "unit": "1 kg",
       "price": 28,
@@ -133,7 +93,7 @@
     },
     {
       "id": "g7",
-      "category": "grocery",
+      "category": "uncategorized",
       "name": "Sugar",
       "unit": "1 kg",
       "price": 46,
@@ -145,7 +105,7 @@
     },
     {
       "id": "g8",
-      "category": "grocery",
+      "category": "uncategorized",
       "name": "Besan",
       "unit": "500 g",
       "price": 58,
@@ -157,7 +117,7 @@
     },
     {
       "id": "v1",
-      "category": "vegetables",
+      "category": "uncategorized",
       "name": "Onion",
       "unit": "1 kg",
       "price": 35,
@@ -169,7 +129,7 @@
     },
     {
       "id": "v2",
-      "category": "vegetables",
+      "category": "uncategorized",
       "name": "Potato",
       "unit": "1 kg",
       "price": 28,
@@ -181,7 +141,7 @@
     },
     {
       "id": "v3",
-      "category": "vegetables",
+      "category": "uncategorized",
       "name": "Tomato",
       "unit": "1 kg",
       "price": 40,
@@ -193,7 +153,7 @@
     },
     {
       "id": "v4",
-      "category": "vegetables",
+      "category": "uncategorized",
       "name": "Green Capsicum",
       "unit": "500 g",
       "price": 35,
@@ -205,7 +165,7 @@
     },
     {
       "id": "v5",
-      "category": "vegetables",
+      "category": "uncategorized",
       "name": "Cauliflower",
       "unit": "1 pc",
       "price": 30,
@@ -217,7 +177,7 @@
     },
     {
       "id": "v6",
-      "category": "vegetables",
+      "category": "uncategorized",
       "name": "Spinach (Palak)",
       "unit": "1 bunch",
       "price": 20,
@@ -229,7 +189,7 @@
     },
     {
       "id": "f1",
-      "category": "fruits",
+      "category": "uncategorized",
       "name": "Banana",
       "unit": "1 dozen",
       "price": 55,
@@ -241,7 +201,7 @@
     },
     {
       "id": "f2",
-      "category": "fruits",
+      "category": "uncategorized",
       "name": "Apple (Shimla)",
       "unit": "1 kg",
       "price": 180,
@@ -253,7 +213,7 @@
     },
     {
       "id": "f3",
-      "category": "fruits",
+      "category": "uncategorized",
       "name": "Papaya",
       "unit": "1 pc",
       "price": 40,
@@ -265,7 +225,7 @@
     },
     {
       "id": "f4",
-      "category": "fruits",
+      "category": "uncategorized",
       "name": "Orange",
       "unit": "1 kg",
       "price": 90,
@@ -277,7 +237,7 @@
     },
     {
       "id": "d1",
-      "category": "dairy",
+      "category": "uncategorized",
       "name": "Amul Milk",
       "unit": "500 ml",
       "price": 30,
@@ -289,7 +249,7 @@
     },
     {
       "id": "d2",
-      "category": "dairy",
+      "category": "uncategorized",
       "name": "Amul Butter",
       "unit": "100 g",
       "price": 58,
@@ -301,7 +261,7 @@
     },
     {
       "id": "d3",
-      "category": "dairy",
+      "category": "uncategorized",
       "name": "Paneer",
       "unit": "200 g",
       "price": 90,
@@ -313,7 +273,7 @@
     },
     {
       "id": "d4",
-      "category": "dairy",
+      "category": "uncategorized",
       "name": "Bread",
       "unit": "1 pack",
       "price": 40,
@@ -325,7 +285,7 @@
     },
     {
       "id": "d5",
-      "category": "dairy",
+      "category": "uncategorized",
       "name": "Curd",
       "unit": "400 g",
       "price": 35,
@@ -337,7 +297,7 @@
     },
     {
       "id": "s1",
-      "category": "snacks",
+      "category": "uncategorized",
       "name": "Lay's Chips",
       "unit": "52 g",
       "price": 20,
@@ -349,7 +309,7 @@
     },
     {
       "id": "s2",
-      "category": "snacks",
+      "category": "uncategorized",
       "name": "Parle-G Biscuit",
       "unit": "250 g",
       "price": 30,
@@ -361,7 +321,7 @@
     },
     {
       "id": "s3",
-      "category": "snacks",
+      "category": "uncategorized",
       "name": "Haldiram Namkeen",
       "unit": "200 g",
       "price": 65,
@@ -373,7 +333,7 @@
     },
     {
       "id": "s4",
-      "category": "snacks",
+      "category": "uncategorized",
       "name": "Maggi Noodles",
       "unit": "4 pack",
       "price": 56,
@@ -385,7 +345,7 @@
     },
     {
       "id": "b1",
-      "category": "beverages",
+      "category": "uncategorized",
       "name": "Coca-Cola",
       "unit": "750 ml",
       "price": 40,
@@ -397,7 +357,7 @@
     },
     {
       "id": "b2",
-      "category": "beverages",
+      "category": "uncategorized",
       "name": "Real Fruit Juice",
       "unit": "1 L",
       "price": 110,
@@ -409,7 +369,7 @@
     },
     {
       "id": "b3",
-      "category": "beverages",
+      "category": "uncategorized",
       "name": "Tea Powder",
       "unit": "250 g",
       "price": 130,
@@ -421,7 +381,7 @@
     },
     {
       "id": "b4",
-      "category": "beverages",
+      "category": "uncategorized",
       "name": "Nescafe Coffee",
       "unit": "50 g",
       "price": 145,
@@ -433,7 +393,7 @@
     },
     {
       "id": "p1",
-      "category": "personal-care",
+      "category": "uncategorized",
       "name": "Colgate Toothpaste",
       "unit": "150 g",
       "price": 95,
@@ -445,7 +405,7 @@
     },
     {
       "id": "p2",
-      "category": "personal-care",
+      "category": "uncategorized",
       "name": "Dove Soap",
       "unit": "1 pc",
       "price": 55,
@@ -457,7 +417,7 @@
     },
     {
       "id": "p3",
-      "category": "personal-care",
+      "category": "uncategorized",
       "name": "Head & Shoulders Shampoo",
       "unit": "180 ml",
       "price": 175,
@@ -469,7 +429,7 @@
     },
     {
       "id": "h1",
-      "category": "household",
+      "category": "uncategorized",
       "name": "Vim Dishwash Bar",
       "unit": "1 pc",
       "price": 20,
@@ -481,7 +441,7 @@
     },
     {
       "id": "h2",
-      "category": "household",
+      "category": "uncategorized",
       "name": "Surf Excel Detergent",
       "unit": "1 kg",
       "price": 130,
@@ -493,7 +453,7 @@
     },
     {
       "id": "h3",
-      "category": "household",
+      "category": "uncategorized",
       "name": "Harpic Toilet Cleaner",
       "unit": "500 ml",
       "price": 95,
