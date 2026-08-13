@@ -25,6 +25,16 @@
   ],
   "products": [
     {
+      "id": "p_msrxkh1z",
+      "category": "cat_msrwwvgf",
+      "name": "Jalan Maida ",
+      "unit": "1 pkt",
+      "price": 28,
+      "icon": "📦",
+      "image": "images/jalan-maida-msrxlqmz.png",
+      "originalPrice": 40
+    },
+    {
       "id": "g1",
       "category": "uncategorized",
       "name": "Ashirvaad Atta",
